@@ -1,17 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Dec 13 10:10:35 2022
 
-@author: bennski
-"""
-
-import pylab as plb
-import scipy as sy
-import matplotlib.pyplot as plt
-from scipy.optimize import leastsq
 import numpy as np
 import math
+import matplotlib.pyplot as plt
 
 
 plt.clf()
