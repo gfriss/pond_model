@@ -16,27 +16,27 @@ if sys.argv[1] == 'temp':
     subprocess.run(['rm', '-rf', 'temperatures'])
     subprocess.run(['mkdir', 'temperatures'])
     for i,temp in enumerate(temperatures):
-        subprocess.run(['python', 'Wet_Dry_Cycling_Pond_Model_interactive.py', 'temp', str(temp), str(i)], check = True, text = True)
+        subprocess.run(['python', 'Wet_dry_pond_param.py', 'temp', str(temp), str(i)], check = True, text = True)
 elif sys.argv[1] == 'hcn':
     hcn_influx_red = np.linspace(HCN_mass_influx_red/10,HCN_mass_influx_red*10, 15) # varying the HCN influx by an order of magnitude
     hcn_influx_ox = np.linspace(HCN_mass_influx_ox/10,HCN_mass_influx_ox*10, 15) # for both the reducing and oxidising atmosphere
     subprocess.run(['rm', '-rf', 'hcn_influx'])
     subprocess.run(['mkdir', 'hcn_influx'])
     for i in range(len(hcn_influx_red)):
-        subprocess.run(['python', 'Wet_Dry_Cycling_Pond_Model_interactive.py', 'hcn', str(hcn_influx_red[i]), str(hcn_influx_ox[i]), str(i)], check = True, text = True)
+        subprocess.run(['python', 'Wet_dry_pond_param.py', 'hcn', str(hcn_influx_red[i]), str(hcn_influx_ox[i]), str(i)], check = True, text = True)
 elif sys.argv[1] == 'h2co':
     h2cn_influx_red = np.linspace(H2CO_mass_influx_red/10,H2CO_mass_influx_red*10, 15) # varying the formaldehyde influx by an order of magnitude
     h2cn_influx_ox = np.linspace(H2CO_mass_influx_ox/10,H2CO_mass_influx_ox*10, 15) # for both the reducing and oxidising atmosphere
     subprocess.run(['rm', '-rf', 'h2co_influx'])
     subprocess.run(['mkdir', 'h2co_influx'])
     for i in range(len(h2cn_influx_red)):
-        subprocess.run(['python', 'Wet_Dry_Cycling_Pond_Model_interactive.py', 'h2co', str(h2cn_influx_red[i]), str(h2cn_influx_ox[i]), str(i)], check = True, text = True)
+        subprocess.run(['python', 'Wet_dry_pond_param.py', 'h2co', str(h2cn_influx_red[i]), str(h2cn_influx_ox[i]), str(i)], check = True, text = True)
 elif sys.argv[1] == 'uv':
     flux = np.linspace(0, 2, 15) # og was 0.4
     subprocess.run(['rm', '-rf', 'uv'])
     subprocess.run(['mkdir', 'uv'])
     for i,f in enumerate(flux):
-        subprocess.run(['python', 'Wet_Dry_Cycling_Pond_Model_interactive.py', 'uv', str(f), str(i)], check = True, text = True)
+        subprocess.run(['python', 'Wet_dry_pond_param.py', 'uv', str(f), str(i)], check = True, text = True)
 
 
 def make_gif(frame_folder, gif_name):
